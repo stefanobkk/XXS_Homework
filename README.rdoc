@@ -18,10 +18,8 @@ in both the name field and in the comments section of the post.
 # Testing the different methods. 
 
 1. Traditional Rails 
-<p>
-  <strong>Description:</strong>
-  <%= @post.description %>
-</p>
+<p> <strong>Description:</strong>
+  <%= @post.description %></p>
 
 By using this method the alert"sometext" will not appear 
 
