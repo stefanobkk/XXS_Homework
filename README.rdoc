@@ -1,0 +1,68 @@
+== README
+
+
+1. What ive done is install devise gem into rails and followed the set-up of the gem. 
+
+2. After devise has been set up we to create the models for the site. 
+
+3. rails g scaffold post title:string description:text belongs_to:user
+
+4. rails g comment post_id:integer description:text
+
+5. rake db:migrate
+
+6. Then create a blog post and put in the <script>window.alert("sometext")</script> 
+in both the name field and in the comments section of the post.
+
+
+# Testing the different methods. 
+
+1. Traditional Rails 
+<p>
+  <strong>Description:</strong>
+  <%= @post.description %>
+</p>
+
+By using this method the alert"sometext" will not appear 
+
+2. Using two eaqual signs(==) 
+<p>
+  <strong>Description:</strong>
+  <%== @post.description %>
+</p>
+
+This causes the alert message to appear.
+
+3. The use of raw 
+<p>
+  <strong>Description:</strong>
+  <%= raw @post.description %>
+</p>
+
+This method is also not secure as the alert messsage appeared.
+
+4. Sanitize 
+<p>
+  <strong>Description:</strong>
+  <%= sanitize @post.description %>
+</p>
+This is secure 
+
+5. HTML safe
+<p>
+  <strong>Description:</strong>
+  <%= @post.description.html_safe %>
+</p>
+
+This type also fails 
+
+
+# Conclusion
+
+* Raills => Secure
+* Two Equal => Fail
+* Raw => Fail
+* Sanitize => Secure
+* HTML Safe => Fail
+
+
